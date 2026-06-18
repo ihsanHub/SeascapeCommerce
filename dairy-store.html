@@ -1260,45 +1260,6 @@ footer{
 <!-- =============================================
      AI PERSONAL SHOPPER (FLOATING)
      ============================================= -->
-<div id="ai-shopper-widget">
-  <div class="ai-chat-panel" id="ai-chat-panel">
-    <div class="ai-chat-header">
-      <div class="ai-header-info">
-        <div class="ai-avatar">🤖</div>
-        <div>
-          <div class="ai-header-name">Wayfinder AI</div>
-          <div class="ai-header-status">● Online — Personal Shopper</div>
-        </div>
-      </div>
-      <button class="ai-close" onclick="closeAiChat()">✕</button>
-    </div>
-    <div class="ai-tab-bar">
-      <button class="ai-tab active" onclick="switchAiTab(this,'chat')">Chat</button>
-      <button class="ai-tab" onclick="switchAiTab(this,'cart')">Smart Cart</button>
-      <button class="ai-tab" onclick="switchAiTab(this,'tips')">Tips</button>
-    </div>
-    <div class="ai-messages" id="ai-messages">
-      <div class="chat-msg bot">
-        <div class="msg-avatar">🤖</div>
-        <div class="msg-bubble">Hi! I'm Wayfinder, your personal dairy shopper. Tell me what you're looking for — a budget, a recipe, a dietary need — and I'll build your cart! 🥛</div>
-      </div>
-    </div>
-    <div class="ai-suggested-chips">
-      <button class="sug-chip" onclick="aiQuickMsg('Cart under $25 with milk, yogurt, ice cream')">Under $25 cart</button>
-      <button class="sug-chip" onclick="aiQuickMsg('Best options for lactose intolerance')">Lactose-free</button>
-      <button class="sug-chip" onclick="aiQuickMsg('Family pack for a week')">Family pack</button>
-    </div>
-    <div class="ai-input-row">
-      <input type="text" id="ai-chat-input" placeholder="Ask anything about dairy..." onkeydown="if(event.key==='Enter')aiSend()">
-      <button class="ai-send" onclick="aiSend()">➤</button>
-    </div>
-  </div>
-  <button class="ai-launcher" onclick="toggleAiChat()">
-    🤖
-    <div class="ai-launcher-badge">AI</div>
-  </button>
-</div>
-
 
 <!-- FOOTER -->
 <footer>
