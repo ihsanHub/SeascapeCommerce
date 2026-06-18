@@ -1941,7 +1941,7 @@ function placeOrder(){
    ============================== */
 let aiOpen = false;
 let aiTab = 'chat';
-const AI_BACKEND_URL = 'https://my-ai-backend-kgv2p5rcq-iahalim87-1864s-projects.vercel.app/api/chat';
+const AI_BACKEND_URL = 'https://my-ai-backend-9sr5t7l9y-iahalim87-1864s-projects.vercel.app/api/chat';
 const AI_MODEL = 'gpt-4o-mini';
 const conversationHistory = [];
 
@@ -2161,7 +2161,7 @@ async function cartAiAction(){
   respEl.textContent = 'Thinking...';
 
   try {
-    const response = await fetch(AI_BACKEND_URL, {
+    const response = await fetch('https://my-ai-backend-9sr5t7l9y-iahalim87-1864s-projects.vercel.app', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
