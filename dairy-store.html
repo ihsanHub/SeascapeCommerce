@@ -1727,7 +1727,7 @@ When generating a cart, respond in this JSON format at the end of your message:
 Be warm, helpful, and conversational. Keep responses concise. Use emojis occasionally.`;
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://my-ai-backend-l1ugkaqac-iahalim87-1864s-projects.vercel.app/api/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -1831,7 +1831,7 @@ async function cartAiAction(){
   respEl.textContent = 'Thinking...';
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://my-ai-backend-l1ugkaqac-iahalim87-1864s-projects.vercel.app/api/chat', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
