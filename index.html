@@ -2024,6 +2024,43 @@ async function aiSend(){
   const productCatalog = ALL_PRODUCTS.map(p=>`ID:${p.id} | ${p.name} | $${p.price} | Tags: ${p.tags.join(',')||'none'} | Category: ${p.cat}`).join('\n');
 
   const systemPrompt = `You are Wayfinder, a friendly AI personal shopper for Seascape Dairy Co., an online dairy grocery store.
+  async function aiSend() {
+  const input = document.getElementById('ai-chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+
+  input.value = '';
+  addChatMsg(msg, 'user');
+  conversationHistory.push({ role: 'user', content: msg });
+
+  // thinking bubble
+  const thinking = addChatMsg('...', 'bot', true);
+
+  try {
+    const response = await fetch(AI_BACKEND_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        messages: conversationHistory,
+        model: AI_MODEL
+      })
+    });
+
+    const data = await response.json();
+    const replyText = getAiResponseText(data);
+
+    // remove thinking bubble
+    thinking.remove();
+
+    addChatMsg(replyText, 'bot');
+    conversationHistory.push({ role: 'assistant', content: replyText });
+
+  } catch (err) {
+    thinking.remove();
+    addChatMsg("⚠️ Error: Could not reach AI server.", "bot");
+    console.error(err);
+  }
+}
 
 CURRENT CART: ${cartSummary}
 
